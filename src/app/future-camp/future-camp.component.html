@@ -1,0 +1,12 @@
+<table class="table table-striped" class="table table-bordered">
+  <tr>
+    <th>Location</th>
+    <th>Camp Date</th>
+    <th>Estimate</th>
+  </tr>  
+  <tr *ngFor="let element of upcomingList">
+        <td>{{element.location}}</td>
+        <td>{{element.campDate | date:'medium'}}</td>
+        <td>{{element.estimate | currency:'INR':'symbol':'4.2-3'}}</td>
+    </tr>
+  </table>

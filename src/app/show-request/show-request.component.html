@@ -1,0 +1,13 @@
+<div class='container'>
+  <div>
+    <label>Required Group</label>&nbsp;
+    <select [(ngModel)]='reqGrp'><option *ngFor='let group of avlblGrps' [value]='group'>{{group}}</option></select>
+    &nbsp;<label>Required Date</label>&nbsp;
+    <input type="date" [(ngModel)]= 'reqDate'>
+    &nbsp;<label>Required Location</label>&nbsp;
+    <input type="text" [(ngModel)]= 'reqLoc'>
+    &nbsp;
+  </div>
+<app-request-details [requiredGroup]="reqGrp" [requiredDate]="reqDate" [requiredLocation]="reqLoc" (event)="onChange($event)"></app-request-details>
+<div><h6>{{msg}}</h6></div>
+</div>

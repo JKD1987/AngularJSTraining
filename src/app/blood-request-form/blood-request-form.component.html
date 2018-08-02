@@ -1,0 +1,34 @@
+<form #form="ngForm" (ngSubmit)='submit()' ngNativeValidate>
+  <div class="form-group">
+    <label for="">ID</label>
+    <input type="" [(ngModel)]='request.id' name='id' class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="">Ptient Name</label>
+    <input type="" [(ngModel)]='request.patientName' minLength = "5" required #name = "ngModel" name='patientName' class="form-control">
+    <div [hidden] = 'name.valid || (name.touched && !form.submitted)'>
+      patient name required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="">Hospital Name</label>
+    <input type="" [(ngModel)]='request.hospitalName' name='hospitalName' class="form-control">
+  </div>
+  <div class="form-group">
+      <label for="">City</label>
+      <input type="" [(ngModel)]='request.city' name='city' class="form-control">
+  </div>
+  <div class="form-group">
+      <label for="">Required Date</label>
+      <input type="" [(ngModel)]='request.whenRequierd' name='whenRequierd' class="form-control">
+  </div>
+  <div class="form-group">
+      <label for="">Required Blood Group</label>
+      <input type="" [(ngModel)]='request.reuiredBloodGroup' name='reuiredBloodGroup' class="form-control">
+  </div>
+  <div class="form-group">
+     <input type="submit" value="Submit" type="button"> &nbsp;<button (click)='reset()'>Reset</button>
+   </div>
+</form>
+
+{{request|json}} is form valid {{form.valid}}
