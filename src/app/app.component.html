@@ -1,7 +1,10 @@
 <app-header></app-header><br><br>
-<div class="container">
-        <app-blood-request-form></app-blood-request-form>
-</div>
-<app-donor-details></app-donor-details>
-<app-reviews></app-reviews>
+<ul class="container">
+  <a [routerLink]="['/login']">Login</a>&nbsp;&nbsp;&nbsp;
+  <a [routerLink]="['/requestForm']">Blood Request Form</a>&nbsp;&nbsp;&nbsp;
+  <a [routerLink]="['/donorDetails']">Donor Details</a>&nbsp;&nbsp;&nbsp;
+  <a [routerLink]="['/reviews']">Review</a>&nbsp;&nbsp;&nbsp;
+  <a [routerLink]="['/logout',true]">Logout</a>
+</ul>
 <app-footer></app-footer>
+<router-outlet></router-outlet>

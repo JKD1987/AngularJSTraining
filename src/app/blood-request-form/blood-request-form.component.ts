@@ -7,7 +7,6 @@ import { BloodRequest } from '../blood-request';
   styleUrls: ['./blood-request-form.component.css']
 })
 export class BloodRequestFormComponent implements OnInit {
-  
   request:BloodRequest={id: 0,
   patientName: '',
   hospitalName: '',

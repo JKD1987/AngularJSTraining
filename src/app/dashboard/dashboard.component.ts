@@ -13,6 +13,7 @@ import { PastCampComponent } from '../past-camp/past-camp.component';
 export class DashboardComponent implements OnInit, AfterContentInit{
   actDonImg:string;
   actDonorsCount:number;
+  reviewMessage:string;
   @ViewChild(BannerComponent)banner:BannerComponent;
   @ViewChild('futureCamp', {read: ViewContainerRef}) futureCamp: ViewContainerRef;
   @ViewChild('pastCamp', {read: ViewContainerRef}) pastCamp: ViewContainerRef;
@@ -32,8 +33,8 @@ export class DashboardComponent implements OnInit, AfterContentInit{
   incrementCount(){
     this.actDonorsCount++;
   }
-  changeResult(){
-    this.service.changeMessage('New Review Available');  
+  changeResult(reviewMessage:string){
+    this.service.changeMessage(reviewMessage);  
   }
   addFuture(){
     this.adder.setRootViewContainerRef(this.futureCamp)

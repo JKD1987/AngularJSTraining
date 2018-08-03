@@ -1,4 +1,40 @@
+<div class="container" *ngIf='!editDetailsTrue'>
+  <form #form="ngForm" (ngSubmit)='submit()'>
+    <div>
+      <label for="">id</label>
+      <input type="text" [(ngModel)] = 'donor.id' name='id'>   
+      <label for="">Name</label>
+        <input type="text" [(ngModel)]='donor.name' name = 'name'>
+      <label for="">Location</label>
+      <input type="text" [(ngModel)]='donor.location' name = 'location'>
+      <label for="">Mobile Number</label>
+      <input type="text" [(ngModel)]='donor.mobileNumber' name = 'mobileNumber'>
+      <label for="">Blood Group</label>
+      <input type="text" [(ngModel)]='donor.bloodGroup' name = 'bloodGroup'>
+      <input type="submit" value="Submit" type="button" (click)='submit()'>
+    </div>
+  </form>
+</div>
+<div class="container" *ngIf="editDetailsTrue">
+    <form #form="ngForm" (ngSubmit)='submit()'>
+      <div>
+        <label for="">id</label>
+        <input type="text" [(ngModel)] = 'donor.id' name='id'>   
+        <label for="">Name</label>
+          <input type="text" [(ngModel)]='donor.name' name = 'name'>
+        <label for="">Location</label>
+        <input type="text" [(ngModel)]='donor.location' name = 'location'>
+        <label for="">Mobile Number</label>
+        <input type="text" [(ngModel)]='donor.mobileNumber' name = 'mobileNumber'>
+        <label for="">Blood Group</label>
+        <input type="text" [(ngModel)]='donor.bloodGroup' name = 'bloodGroup'>
+        <input type="submit" value="Update" type="button" (click)='submit()'>
+      </div>
+    </form>
+  </div>
+
 <div class="container">
+  <h4>{{msg}}</h4>
   <br><input type="text" [(ngModel)]='searchGroup' style="border-radius: 5px 5px">
   <i class="fa fa-search" style="transform:translate(-20px, 0px)"></i>
   <p>Details of {{searchGroup}} are shown.</p>
@@ -10,9 +46,11 @@
     <th>Location</th>
     <th>Blood Group</th>
     <th>Mobile number</th>
-    <th>Action</th>
+    <th>Show Action</th>
+    <th>Edit Action</th>
+    <th>Delete Action</th>
   </tr>
-    <tr *ngFor="let eachDonor of donorList|filter:'bloodGroup':searchGroup" style="text-align: center">
+    <tr *ngFor="let eachDonor of donorList|filter:'bloodGroup':searchGroup let idx=index" style="text-align: center">
       <td>{{eachDonor.name}}</td>
       <td>{{eachDonor.location}}</td>
       <td>{{eachDonor.bloodGroup}}</td>
@@ -20,6 +58,12 @@
       <td>
         <button [disabled] = "disableShowButton" (click)="showDetails(eachDonor.name)" class="btn btn-success btn-sm">Show Details</button>
       </td>
+      <td>
+          <button (click)="editDetails(eachDonor)" class="btn btn-success btn-sm">Edit Details</button>
+        </td>
+        <td>
+            <button (click)="delete(eachDonor, idx)" class="btn btn-success btn-sm">Delete</button>
+          </td>
   </tr>
 </table>
 <h6 style="text-align: left">{{details}}</h6>

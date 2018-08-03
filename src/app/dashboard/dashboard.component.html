@@ -1,8 +1,8 @@
 <div class='card-deck'>
   <div class='card'>
     <div class='card-header'>Active Donors</div>
-    <div class='card-img-top'><img [src]="actDonImg" appMagnify alt="Active Donor Image" height='60px' width='100px'></div>
-    <div><p appHighlight fontsize='2em' fontFamily='Calibri'>{{actDonorsCount}}</p></div>
+    <div class='card-img-top'><img [src]="actDonImg" alt="Active Donor Image" height='60px' width='100px'></div>
+    <div><p fontsize='2em' fontFamily='Calibri'>{{actDonorsCount}}</p></div>
   </div>
   <button class="fa fa-plus-circle" (click)='incrementCount()'></button>
 </div><br>
@@ -13,4 +13,5 @@
 <div #futureCamp></div>
 <button (click)='addPast()' class="btn btn-success btn-sm">Show Past Camp Details</button><br><br>
 <div #pastCamp></div><br>
-<button (click)='changeResult()' class="btn btn-success btn-sm">Add Review</button><br><br>
+<br><input type="text" [(ngModel)]='reviewMessage' style="border-radius: 5px 5px">&nbsp;
+<button (click)="changeResult(reviewMessage)" class="btn btn-success btn-sm">Add Review</button><br><br>

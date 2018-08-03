@@ -14,10 +14,11 @@ import { FutureCampComponent } from './future-camp/future-camp.component';
 import { PastCampComponent } from './past-camp/past-camp.component';
 import {ReviewsComponent} from './reviews/reviews.component';
 import {BannerComponent} from './banner/banner.component';
-import { HighlightDirective } from './highlight.directive';
-import { MagnifyDirective } from './magnify.directive';
 import { FilterPipe } from './filter.pipe';
 import { BloodRequestFormComponent } from './blood-request-form/blood-request-form.component';
+import { LoginComponent } from './login/login.component';
+import { MasterComponent } from './master/master.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 @NgModule({
@@ -33,10 +34,11 @@ import { BloodRequestFormComponent } from './blood-request-form/blood-request-fo
     PastCampComponent,
     ReviewsComponent,
     BannerComponent,
-    HighlightDirective,
-    MagnifyDirective,
     FilterPipe,
-    BloodRequestFormComponent
+    BloodRequestFormComponent,
+    LoginComponent,
+    MasterComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<div class="formGroup">
+<form [formGroup]='loginForm' (ngSubmit)='submit()' class='container'>
+<ng-container *ngFor='let eachConfig of formConfig'>
+  <div>
+    <div>
+  <label>{{eachConfig.label}}</label> &nbsp;&nbsp;
+</div>
+  <div>
+  <input type={{eachConfig.type}} name={{eachConfig.name}} formControlName={{eachConfig.name}}>
+</div>
+</div>
+</ng-container><br>
+<input type='submit' value = 'Login' [disabled]='!loginForm.valid'><br><br>
+</form>
+
+<router-outlet></router-outlet>
+
